@@ -119,7 +119,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.ad=1 \
     ro.vendor.display.cabl=2 \
     ro.vendor.display.sensortype=2 \
-    persist.vendor.color.matrix=2 \
     vendor.display.comp_mask=0 \
     vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
     vendor.display.disable_decimation=1 \
@@ -160,7 +159,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.demo.hdmirotationlock=false \
     persist.sys.sf.color_saturation=1.0 \
     ro.opengles.version=196610 \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.disable_ubwc=0
 
