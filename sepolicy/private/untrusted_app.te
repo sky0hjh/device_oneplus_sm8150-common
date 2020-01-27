@@ -1,2 +1,2 @@
-allow untrusted_app persist_camera_prop:file { read open };
+allow untrusted_app persist_camera_prop:file { read open getattr map};
 

@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    vendor.pa.biometrics.fingerprint.inscreen@1.0-service.oneplus_msmnile
+    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.oneplus_msmnile
 
 # Fstab
 ifneq ($(TARGET_USES_ONEPLUS_DYNAMIC_PARTITIONS),true)
@@ -157,10 +157,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/msm_irqbalance.conf
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    vendor/pa/config/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml
-
 # Power
 PRODUCT_PACKAGES += \
     power.qcom
@@ -185,15 +181,13 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    android.hardware.boot@1.0-impl:64 \
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl.recovery \
     bootctrl.msmnile \
-    libcutils \
-    librecovery_updater_msm \
-    libz \
+    bootctrl.msmnile.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
@@ -213,3 +207,7 @@ PRODUCT_COPY_FILES += \
 
 #PRODUCT_BOOT_JARS += \
     WfdCommon
+
+# Wallpapers
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt
